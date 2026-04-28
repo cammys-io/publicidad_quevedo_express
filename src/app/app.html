@@ -1,183 +1,105 @@
-<div class="min-h-screen bg-[#0c0c0c] text-white font-['DM_Sans']">
+<div class="min-h-screen bg-white font-['DM_Sans'] text-slate-900">
 
-  <!-- ── NAVBAR ── -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0c0c0c]/95 backdrop-blur-sm border-b border-white/5">
-    <div class="flex items-center justify-between px-5 h-14 max-w-2xl mx-auto">
-      <div class="flex items-center gap-2.5">
-        <div class="w-7 h-7 bg-[#c9a84c] rounded flex items-center justify-center shrink-0">
-          <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 24 24">
+  <!-- ══════════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+
+      <!-- Logo -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M19.07 4.93L17.65 3.5c-.39-.39-1.02-.39-1.41 0l-10.6 10.6c-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0l10.6-10.6c.39-.39.39-1.02 0-1.41zM5.5 13.5l-2.04 4.04c-.2.4-.11.88.23 1.22.39.39 1.02.39 1.41 0l4.04-2.04-3.64-3.22z"/>
           </svg>
         </div>
-        <span class="text-white font-semibold text-sm tracking-wide">Quevedo Express</span>
+        <div class="leading-none">
+          <p class="font-black text-slate-900 text-sm" style="font-family:'Playfair Display',serif">Quevedo Express</p>
+          <p class="text-[10px] text-slate-400 tracking-wider uppercase">Taller Mecánico · Oaxaca</p>
+        </div>
       </div>
-      <a [href]="'tel:' + phone"
-         class="flex items-center gap-1.5 text-[#c9a84c] text-xs font-semibold tracking-wide uppercase">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-        </svg>
-        Llamar
-      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#servicios" class="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Servicios</a>
+        <a href="#contacto"  class="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Contacto</a>
+        <a href="#ubicacion" class="text-sm text-slate-500 hover:text-slate-900 transition-colors font-medium">Ubicación</a>
+      </div>
+
+      <!-- CTAs navbar -->
+      <div class="flex items-center gap-3">
+        <a [href]="'https://wa.me/52' + phone" target="_blank"
+           class="hidden sm:flex items-center gap-2 text-emerald-600 hover:text-emerald-700 text-sm font-semibold transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.618h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/>
+          </svg>
+          WhatsApp
+        </a>
+        <a [href]="'tel:' + phone"
+           class="flex items-center gap-2 bg-red-600 hover:bg-red-700 active:bg-red-800 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors">
+          <svg class="w-4 h-4 icon-ring" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span class="hidden sm:inline">{{ phoneDisplay }}</span>
+          <span class="sm:hidden">Llamar</span>
+        </a>
+      </div>
+
     </div>
   </nav>
 
-  <!-- ── HERO ── -->
-  <header class="relative min-h-dvh flex flex-col justify-end pb-28 pt-14 overflow-hidden">
+  <!-- ══════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════ -->
+  <header class="relative bg-slate-950 overflow-hidden pt-16">
 
-    <!-- Fondo con textura y gradiente -->
-    <div class="absolute inset-0 bg-[#0c0c0c]">
-      <div class="absolute inset-0 opacity-30"
-           style="background-image: radial-gradient(ellipse 80% 60% at 50% 0%, #c9a84c22 0%, transparent 70%)"></div>
-      <div class="absolute inset-0"
-           style="background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 40px 40px"></div>
-      <div class="absolute bottom-0 left-0 right-0 h-48"
-           style="background: linear-gradient(to top, #0c0c0c, transparent)"></div>
+    <!-- Fondo animado -->
+    <div class="absolute inset-0">
+      <div class="hero-gradient absolute inset-0"></div>
+      <div class="absolute inset-0 opacity-[0.03]"
+           style="background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:48px 48px"></div>
     </div>
 
-    <!-- Partículas -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      @for (p of particles; track p.id) {
-        <div class="particle-gold"
-             [style.left]="p.left"
-             [style.animation-duration]="p.duration"
-             [style.animation-delay]="p.delay"
-             [style.opacity]="p.opacity"></div>
-      }
-    </div>
+    <!-- Orbs de color -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse-slow"></div>
+    <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay:2s"></div>
 
-    <div class="relative px-5 max-w-2xl mx-auto w-full">
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 py-20 sm:py-28 lg:py-36">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <!-- Badge -->
-      <div class="hero-badge inline-flex items-center gap-2 mb-6">
-        <div class="w-1.5 h-1.5 rounded-full bg-[#c9a84c] animate-pulse"></div>
-        <span class="text-[#c9a84c] text-[10px] font-bold tracking-[0.2em] uppercase">Taller Certificado · Oaxaca</span>
-      </div>
-
-      <!-- Headline -->
-      <h1 class="hero-title font-black leading-[0.9] tracking-tight mb-5" style="font-family:'Playfair Display',serif">
-        <span class="block text-white" style="font-size: clamp(3rem, 14vw, 5rem)">Auto</span>
-        <span class="block text-white" style="font-size: clamp(3rem, 14vw, 5rem)">Servicio</span>
-        <span class="block text-[#c9a84c]" style="font-size: clamp(2.2rem, 10vw, 3.8rem)">Quevedo Express</span>
-      </h1>
-
-      <!-- Descripción -->
-      <p class="hero-desc text-white/50 text-sm leading-relaxed max-w-xs mb-8">
-        Más de <span class="text-white/80 font-medium">15 años</span> brindando servicio automotriz profesional en San Antonio de la Cal.
-      </p>
-
-      <!-- Stats inline -->
-      <div class="hero-stats flex items-center gap-5">
+        <!-- Texto -->
         <div>
-          <p class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">
-            <span data-counter="15" data-suffix="+">15+</span>
+          <!-- Badge -->
+          <div class="hero-badge inline-flex items-center gap-2.5 bg-white/5 border border-white/10 rounded-full px-4 py-2 mb-8">
+            <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+            <span class="text-white/60 text-xs font-semibold tracking-widest uppercase">Taller Mecánico Certificado</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="hero-title font-black leading-[0.92] tracking-tight mb-6"
+              style="font-family:'Playfair Display',serif; font-size:clamp(2.8rem,7vw,5.5rem)">
+            <span class="block text-white">Auto Servicio</span>
+            <span class="block text-gradient-red">Quevedo</span>
+            <span class="block text-white">Express</span>
+          </h1>
+
+          <p class="hero-desc text-white/50 text-base sm:text-lg leading-relaxed max-w-md mb-10">
+            Diagnóstico, reparación y mantenimiento automotriz profesional en San Antonio de la Cal, Oaxaca.
+            Más de <span class="text-white font-semibold">15 años</span> de experiencia.
           </p>
-          <p class="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">Años</p>
-        </div>
-        <div class="w-px h-8 bg-white/10"></div>
-        <div>
-          <p class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">
-            <span data-counter="500" data-suffix="+">500+</span>
-          </p>
-          <p class="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">Clientes</p>
-        </div>
-        <div class="w-px h-8 bg-white/10"></div>
-        <div>
-          <p class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">4</p>
-          <p class="text-[10px] text-white/40 uppercase tracking-widest mt-0.5">Servicios</p>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- ── SERVICIOS ── -->
-  <section class="bg-[#111111] py-16">
-    <div class="px-5 max-w-2xl mx-auto">
-
-      <div class="mb-8" data-animate="fade-up">
-        <p class="text-[#c9a84c] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Especialidades</p>
-        <h2 class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">Nuestros Servicios</h2>
-      </div>
-
-      <!-- Scroll horizontal en móvil -->
-      <div class="flex gap-4 overflow-x-auto pb-4 -mx-5 px-5 snap-x snap-mandatory scrollbar-hide">
-        @for (s of services; track s.title; let i = $index) {
-          <div class="service-card snap-start shrink-0 w-44 bg-[#181818] border border-white/5 rounded-2xl p-5 cursor-pointer"
-               data-animate="fade-up"
-               [style.transition-delay]="i * 0.08 + 's'">
-            <div class="w-10 h-10 bg-[#c9a84c]/10 rounded-xl flex items-center justify-center mb-4 service-icon">
-              <svg [innerHTML]="s.iconSvg" class="w-5 h-5 text-[#c9a84c]"></svg>
-            </div>
-            <h3 class="text-sm font-bold text-white mb-1.5 leading-tight">{{ s.title }}</h3>
-            <p class="text-white/40 text-[11px] leading-relaxed">{{ s.desc }}</p>
-          </div>
-        }
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── CONTACTO ── -->
-  <section class="bg-[#0c0c0c] py-16">
-    <div class="px-5 max-w-2xl mx-auto">
-
-      <div class="mb-8" data-animate="fade-up">
-        <p class="text-[#c9a84c] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Información</p>
-        <h2 class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">Estamos Aquí</h2>
-      </div>
-
-      <div class="space-y-4">
-
-        <!-- Horario -->
-        <div class="info-card bg-[#111111] border border-white/5 rounded-2xl p-6" data-animate="fade-up">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-9 h-9 bg-[#c9a84c]/10 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00-.293.707l-.707.707a1 1 0 101.414 1.414l1.414-1.414A1 1 0 0011 9.414V6z" clip-rule="evenodd"/>
-              </svg>
-            </div>
-            <h3 class="text-sm font-bold text-white">Horario de Atención</h3>
-          </div>
-          <div class="space-y-3">
-            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
-              <span class="text-white/60 text-sm">Lun – Vie</span>
-              <span class="text-white text-sm font-medium">9:00–15:00 · 16:00–18:00</span>
-            </div>
-            <div class="flex justify-between items-center py-2.5 border-b border-white/5">
-              <span class="text-white/60 text-sm">Sábado</span>
-              <span class="text-white text-sm font-medium">9:00–15:00</span>
-            </div>
-            <div class="flex justify-between items-center py-2.5">
-              <span class="text-white/60 text-sm">Domingo</span>
-              <span class="text-red-400 text-sm font-semibold">Cerrado</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Teléfono -->
-        <div class="info-card bg-[#111111] border border-white/5 rounded-2xl p-6" data-animate="fade-up" style="transition-delay:.1s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-9 h-9 bg-[#c9a84c]/10 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-              </svg>
-            </div>
-            <h3 class="text-sm font-bold text-white">Contáctanos</h3>
-          </div>
-          <a [href]="'tel:' + phone" class="block text-2xl font-black text-white mb-1" style="font-family:'Playfair Display',serif">
-            {{ phoneDisplay }}
-          </a>
-          <p class="text-white/40 text-xs mb-5">Llamada o WhatsApp</p>
-          <div class="grid grid-cols-2 gap-3">
+          <!-- CTAs hero -->
+          <div class="hero-ctas flex flex-col sm:flex-row gap-3">
             <a [href]="'tel:' + phone"
-               class="touch-target flex items-center justify-center gap-2 bg-[#c9a84c] text-black text-sm font-bold rounded-xl py-3 transition-opacity active:opacity-80">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+               class="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-bold text-base px-7 py-4 rounded-xl shadow-lg shadow-red-900/30 transition-all duration-200">
+              <svg class="w-5 h-5 icon-ring" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
               </svg>
-              Llamar
+              {{ phoneDisplay }}
             </a>
             <a [href]="'https://wa.me/52' + phone" target="_blank"
-               class="touch-target flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white text-sm font-bold rounded-xl py-3 transition-opacity active:opacity-80">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+               class="flex items-center justify-center gap-3 bg-white/8 hover:bg-white/12 active:scale-95 border border-white/15 text-white font-bold text-base px-7 py-4 rounded-xl transition-all duration-200">
+              <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.618h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/>
               </svg>
               WhatsApp
@@ -185,126 +107,380 @@
           </div>
         </div>
 
-        <!-- Dirección -->
-        <div class="info-card bg-[#111111] border border-white/5 rounded-2xl p-6" data-animate="fade-up" style="transition-delay:.2s">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-9 h-9 bg-[#c9a84c]/10 rounded-xl flex items-center justify-center shrink-0">
-              <svg class="w-4 h-4 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+        <!-- Stats bento (desktop) -->
+        <div class="hero-stats grid grid-cols-2 gap-4">
+          <div class="bento-card bg-white/5 border border-white/8 rounded-2xl p-6 col-span-2 flex items-center justify-between">
+            <div>
+              <p class="text-white/40 text-xs uppercase tracking-widest mb-1">Años de experiencia</p>
+              <p class="text-5xl font-black text-white" style="font-family:'Playfair Display',serif">
+                <span data-counter="15" data-suffix="+">15+</span>
+              </p>
+            </div>
+            <div class="w-16 h-16 bg-red-600/20 rounded-2xl flex items-center justify-center">
+              <svg class="w-8 h-8 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
               </svg>
             </div>
-            <h3 class="text-sm font-bold text-white">Ubicación</h3>
           </div>
-          <p class="text-white font-semibold text-sm mb-0.5">Av. Morelos No. 29, Centro</p>
-          <p class="text-white/40 text-xs mb-0.5">San Antonio de la Cal, 71263</p>
-          <p class="text-[#c9a84c] text-xs font-semibold">Oaxaca, México</p>
+          <div class="bento-card bg-red-600/10 border border-red-500/20 rounded-2xl p-6">
+            <p class="text-red-300/60 text-xs uppercase tracking-widest mb-1">Clientes</p>
+            <p class="text-3xl font-black text-white" style="font-family:'Playfair Display',serif">
+              <span data-counter="500" data-suffix="+">500+</span>
+            </p>
+          </div>
+          <div class="bento-card bg-blue-600/10 border border-blue-500/20 rounded-2xl p-6">
+            <p class="text-blue-300/60 text-xs uppercase tracking-widest mb-1">Servicios</p>
+            <p class="text-3xl font-black text-white" style="font-family:'Playfair Display',serif">4</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Wave divisor -->
+    <div class="relative h-16 bg-white">
+      <div class="absolute bottom-full left-0 right-0 h-16 bg-slate-950"
+           style="clip-path:polygon(0 100%,100% 0,100% 100%)"></div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SERVICIOS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="servicios" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <!-- Header sección -->
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12" data-animate="fade-up">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-1 bg-red-600 rounded-full"></div>
+            <span class="text-red-600 text-xs font-bold tracking-widest uppercase">Especialidades</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight" style="font-family:'Playfair Display',serif">
+            Nuestros Servicios
+          </h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-xs leading-relaxed">
+          Equipamiento profesional para resolver cualquier necesidad automotriz.
+        </p>
+      </div>
+
+      <!-- Grid servicios responsive -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        @for (s of services; track s.title; let i = $index) {
+          <div class="service-card group bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-200 rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-xl hover:shadow-red-50 hover:-translate-y-1"
+               data-animate="fade-up"
+               [style.transition-delay]="i * 0.08 + 's'">
+
+            <div class="w-12 h-12 bg-red-50 group-hover:bg-red-600 rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+              <svg [innerHTML]="s.iconSvg" class="w-6 h-6 text-red-600 group-hover:text-white transition-colors duration-300"></svg>
+            </div>
+
+            <h3 class="font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors duration-200">{{ s.title }}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{{ s.desc }}</p>
+
+            <div class="mt-4 flex items-center gap-1 text-red-600 text-xs font-bold opacity-0 group-hover:opacity-100 transition-all duration-200 -translate-x-2 group-hover:translate-x-0">
+              <span>Más info</span>
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONTACTO
+  ══════════════════════════════════════════════════════════ -->
+  <section id="contacto" class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+
+      <div class="mb-12" data-animate="fade-up">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-1 bg-blue-600 rounded-full"></div>
+          <span class="text-blue-600 text-xs font-bold tracking-widest uppercase">Información</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight" style="font-family:'Playfair Display',serif">
+          Estamos Aquí para Ti
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Horario -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-50 transition-all duration-300"
+             data-animate="fade-up">
+          <div class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00-.293.707l-.707.707a1 1 0 101.414 1.414l1.414-1.414A1 1 0 0011 9.414V6z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-5">Horario</h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between items-center py-3 border-b border-slate-100">
+              <span class="text-slate-500 font-medium">Lun – Vie</span>
+              <span class="text-slate-900 font-semibold text-right">9:00–15:00<br>16:00–18:00</span>
+            </div>
+            <div class="flex justify-between items-center py-3 border-b border-slate-100">
+              <span class="text-slate-500 font-medium">Sábado</span>
+              <span class="text-slate-900 font-semibold">9:00–15:00</span>
+            </div>
+            <div class="flex justify-between items-center py-3">
+              <span class="text-slate-500 font-medium">Domingo</span>
+              <span class="text-red-500 font-bold">Cerrado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 hover:border-red-200 hover:shadow-lg hover:shadow-red-50 transition-all duration-300"
+             data-animate="fade-up" style="transition-delay:.1s">
+          <div class="w-11 h-11 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-2">Contáctanos</h3>
+          <a [href]="'tel:' + phone"
+             class="block text-2xl sm:text-3xl font-black text-slate-900 hover:text-red-600 transition-colors mb-1" style="font-family:'Playfair Display',serif">
+            {{ phoneDisplay }}
+          </a>
+          <p class="text-slate-400 text-sm mb-6">Llamada o WhatsApp</p>
+          <div class="flex flex-col gap-3">
+            <a [href]="'tel:' + phone"
+               class="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-4 py-3 rounded-xl transition-colors min-h-11">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+              </svg>
+              Llamar ahora
+            </a>
+            <a [href]="'https://wa.me/52' + phone" target="_blank"
+               class="flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold px-4 py-3 rounded-xl transition-colors min-h-11">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.618h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/>
+              </svg>
+              Enviar WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div class="bg-white rounded-2xl p-7 border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300"
+             data-animate="fade-up" style="transition-delay:.2s">
+          <div class="w-11 h-11 bg-slate-800 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="font-bold text-slate-900 text-lg mb-4">Dirección</h3>
+          <address class="not-italic">
+            <p class="font-bold text-slate-900 text-base leading-snug">Av. Morelos No. 29</p>
+            <p class="text-slate-500 text-sm">Centro, San Antonio de la Cal</p>
+            <p class="text-slate-500 text-sm">71263, Oaxaca, México</p>
+          </address>
+          <div class="mt-6 pt-5 border-t border-slate-100 flex items-center gap-2">
+            <svg class="w-4 h-4 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+            </svg>
+            <p class="text-slate-400 text-xs">Cerca del mercado local</p>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── TESTIMONIOS ── -->
-  <section class="bg-[#111111] py-16">
-    <div class="px-5 max-w-2xl mx-auto">
+  <!-- ══════════════════════════════════════════════════════════
+       TESTIMONIOS
+  ══════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
 
-      <div class="mb-8" data-animate="fade-up">
-        <p class="text-[#c9a84c] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Opiniones</p>
-        <h2 class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">Nuestros Clientes</h2>
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12" data-animate="fade-up">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-1 bg-red-600 rounded-full"></div>
+            <span class="text-red-600 text-xs font-bold tracking-widest uppercase">Opiniones</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight" style="font-family:'Playfair Display',serif">
+            Lo que dicen<br class="hidden sm:block"> nuestros Clientes
+          </h2>
+        </div>
+        <div class="flex items-center gap-1.5 bg-amber-50 border border-amber-200 rounded-xl px-4 py-2.5 self-start sm:self-auto">
+          <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <span class="text-amber-700 text-sm font-bold">5.0</span>
+          <span class="text-amber-600/60 text-xs">· 6 reseñas</span>
+        </div>
       </div>
 
-      <!-- Scroll horizontal testimonios -->
-      <div class="flex gap-4 overflow-x-auto pb-4 -mx-5 px-5 snap-x snap-mandatory scrollbar-hide">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         @for (t of testimonials; track t.name; let i = $index) {
-          <div class="snap-start shrink-0 w-72 bg-[#181818] border border-white/5 rounded-2xl p-5"
+          <div class="testimonial-card bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-lg hover:border-slate-300 transition-all duration-300 hover:-translate-y-0.5"
                data-animate="fade-up"
                [style.transition-delay]="i * 0.08 + 's'">
+
             <!-- Estrellas -->
-            <div class="flex gap-0.5 mb-3">
+            <div class="flex gap-1 mb-4">
               @for (s of [1,2,3,4,5]; track s) {
-                <svg class="w-3.5 h-3.5 star-pop" [attr.fill]="s <= t.stars ? '#c9a84c' : '#ffffff15'" viewBox="0 0 20 20"
-                     [style.animation-delay]="(i*5+s)*0.06+'s'">
+                <svg class="w-4 h-4 star-pop" [attr.fill]="s<=t.stars?'#f59e0b':'#e2e8f0'" viewBox="0 0 20 20"
+                     [style.animation-delay]="(i*5+s)*0.05+'s'">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
               }
             </div>
-            <p class="text-white/60 text-xs leading-relaxed mb-4">"{{ t.comment }}"</p>
-            <div class="flex items-center gap-2.5 pt-3 border-t border-white/5">
-              <div class="w-7 h-7 bg-[#c9a84c] rounded-full flex items-center justify-center shrink-0">
-                <span class="text-black text-[10px] font-black">{{ t.name[0] }}</span>
+
+            <p class="text-slate-600 text-sm leading-relaxed mb-5">"{{ t.comment }}"</p>
+
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-200">
+              <div class="w-9 h-9 bg-red-600 rounded-full flex items-center justify-center shrink-0">
+                <span class="text-white text-xs font-black">{{ t.name[0] }}</span>
               </div>
               <div>
-                <p class="text-white text-xs font-semibold leading-none">{{ t.name }}</p>
-                <p class="text-[#c9a84c] text-[10px] mt-0.5">{{ t.service }}</p>
+                <p class="font-bold text-slate-900 text-sm leading-none">{{ t.name }}</p>
+                <p class="text-red-500 text-xs mt-0.5">{{ t.service }}</p>
               </div>
             </div>
           </div>
         }
       </div>
+
     </div>
   </section>
 
-  <!-- ── MAPA ── -->
-  <section class="bg-[#0c0c0c] py-16">
-    <div class="px-5 max-w-2xl mx-auto">
+  <!-- ══════════════════════════════════════════════════════════
+       MAPA
+  ══════════════════════════════════════════════════════════ -->
+  <section id="ubicacion" class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
 
-      <div class="mb-6" data-animate="fade-up">
-        <p class="text-[#c9a84c] text-[10px] font-bold tracking-[0.2em] uppercase mb-2">Encuéntranos</p>
-        <h2 class="text-2xl font-black text-white" style="font-family:'Playfair Display',serif">¿Cómo Llegar?</h2>
+      <div class="mb-12" data-animate="fade-up">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-1 bg-blue-600 rounded-full"></div>
+          <span class="text-blue-600 text-xs font-bold tracking-widest uppercase">Ubicación</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight" style="font-family:'Playfair Display',serif">
+          ¿Cómo Llegar?
+        </h2>
       </div>
 
-      <div class="rounded-2xl overflow-hidden border border-white/5 h-56" data-animate="scale-in">
-        <iframe [src]="mapEmbedUrl" class="w-full h-full border-0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      <div class="mt-4 grid grid-cols-3 gap-3">
-        @for (step of mapSteps; track step.num; let i = $index) {
-          <div class="bg-[#111111] border border-white/5 rounded-xl p-3 text-center"
-               data-animate="fade-up"
-               [style.transition-delay]="i * 0.1 + 's'">
-            <div class="w-6 h-6 bg-[#c9a84c]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-              <span class="text-[#c9a84c] text-[10px] font-black">{{ step.num }}</span>
+        <!-- Mapa grande -->
+        <div class="lg:col-span-2 rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-72 sm:h-96" data-animate="scale-in">
+          <iframe [src]="mapEmbedUrl" class="w-full h-full border-0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Pasos -->
+        <div class="flex flex-col gap-4" data-animate="fade-up">
+          @for (step of mapSteps; track step.num; let i = $index) {
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 flex items-start gap-4 hover:border-blue-200 hover:shadow-sm transition-all duration-200"
+                 [style.transition-delay]="i * 0.1 + 's'">
+              <div class="w-9 h-9 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 text-white font-black text-sm">
+                {{ step.num }}
+              </div>
+              <div>
+                <p class="font-bold text-slate-900 text-sm mb-1">{{ step.title }}</p>
+                <p class="text-slate-500 text-xs leading-relaxed">{{ step.desc }}</p>
+              </div>
             </div>
-            <p class="text-white text-[11px] font-semibold mb-0.5">{{ step.title }}</p>
-            <p class="text-white/30 text-[10px] leading-tight">{{ step.desc }}</p>
-          </div>
-        }
-      </div>
+          }
 
+          <!-- Dirección rápida -->
+          <div class="bg-blue-600 rounded-2xl p-5 mt-auto">
+            <p class="text-white/70 text-xs uppercase tracking-widest mb-1">Dirección</p>
+            <p class="text-white font-bold text-sm leading-snug">Av. Morelos No. 29, Centro</p>
+            <p class="text-white/60 text-xs mt-1">San Antonio de la Cal, Oaxaca</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer class="bg-[#080808] border-t border-white/5 px-5 py-8 pb-32">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="text-white font-black text-lg mb-1" style="font-family:'Playfair Display',serif">
-        Auto Servicio <span class="text-[#c9a84c]">Quevedo Express</span>
-      </p>
-      <p class="text-white/30 text-xs">Av. Morelos No. 29 · San Antonio de la Cal, Oaxaca</p>
-      <div class="w-8 h-px bg-[#c9a84c]/30 mx-auto my-4"></div>
-      <p class="text-white/20 text-[10px]">© 2025 Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  <!-- ══════════════════════════════════════════════════════════
+       CTA FINAL
+  ══════════════════════════════════════════════════════════ -->
+  <section class="relative bg-slate-950 overflow-hidden py-24 lg:py-32">
+    <div class="absolute inset-0 hero-gradient opacity-60"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent"></div>
 
-  <!-- ── BARRA CTA FIJA (MOBILE) ── -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 safe-area-bottom">
-    <div class="bg-[#0c0c0c]/95 backdrop-blur-md border-t border-white/8 px-4 pt-3 pb-4 max-w-2xl mx-auto">
-      <div class="grid grid-cols-2 gap-3">
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center" data-animate="fade-up">
+      <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-8">
+        <span class="w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse"></span>
+        Agenda tu cita hoy
+      </div>
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6" style="font-family:'Playfair Display',serif">
+        ¿Listo para cuidar<br class="hidden sm:block"> tu vehículo?
+      </h2>
+      <p class="text-white/50 text-lg max-w-xl mx-auto mb-10">
+        Contáctanos y nuestros especialistas te atenderán de inmediato.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a [href]="'tel:' + phone"
-           class="touch-target flex items-center justify-center gap-2.5 bg-[#c9a84c] text-black font-bold text-sm rounded-xl py-3.5 transition-opacity active:opacity-75">
-          <svg class="w-4 h-4 icon-ring" fill="currentColor" viewBox="0 0 20 20">
+           class="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-red-900/30 transition-all duration-200">
+          <svg class="w-5 h-5 icon-ring" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
           </svg>
-          Llamar
+          Llamar Ahora
         </a>
         <a [href]="'https://wa.me/52' + phone" target="_blank"
-           class="touch-target flex items-center justify-center gap-2.5 bg-[#1a1a1a] border border-white/10 text-white font-bold text-sm rounded-xl py-3.5 transition-opacity active:opacity-75">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+           class="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-bold text-base px-8 py-4 rounded-xl transition-all duration-200">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.618h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/>
           </svg>
           WhatsApp
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="bg-slate-900 py-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-5">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.07 4.93L17.65 3.5c-.39-.39-1.02-.39-1.41 0l-10.6 10.6c-.39.39-.39 1.02 0 1.41l1.41 1.41c.39.39 1.02.39 1.41 0l10.6-10.6c.39-.39.39-1.02 0-1.41zM5.5 13.5l-2.04 4.04c-.2.4-.11.88.23 1.22.39.39 1.02.39 1.41 0l4.04-2.04-3.64-3.22z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-white font-bold text-sm" style="font-family:'Playfair Display',serif">Auto Servicio Quevedo Express</p>
+          <p class="text-white/30 text-xs">Av. Morelos No. 29 · San Antonio de la Cal, Oaxaca</p>
+        </div>
+      </div>
+      <p class="text-white/20 text-xs">© 2025 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       BARRA MÓVIL FIJA (solo mobile)
+  ══════════════════════════════════════════════════════════ -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 pt-3 pb-4"
+       style="padding-bottom: max(1rem, env(safe-area-inset-bottom))">
+    <div class="grid grid-cols-2 gap-3">
+      <a [href]="'tel:' + phone"
+         class="flex items-center justify-center gap-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-sm rounded-xl py-3.5 transition-colors min-h-11 active:opacity-80">
+        <svg class="w-4 h-4 icon-ring" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.893 1.038a1 1 0 00-.464 1.417c.853 1.611 2.655 3.409 4.266 4.263a1 1 0 001.417-.464l1.038-1.893a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+        </svg>
+        Llamar
+      </a>
+      <a [href]="'https://wa.me/52' + phone" target="_blank"
+         class="flex items-center justify-center gap-2.5 bg-slate-900 text-white font-bold text-sm rounded-xl py-3.5 transition-colors min-h-11 active:opacity-80">
+        <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.618h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.981.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884z"/>
+        </svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 
@@ -312,102 +488,65 @@
 
 <style>
   html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; background: #0c0c0c; }
+  body { -webkit-font-smoothing: antialiased; }
 
-  /* ── SCROLL-REVEAL ───────────────────────────────────────────── */
+  /* ── SCROLL REVEAL ─────────────────────────────────────────── */
   [data-animate] {
     opacity: 0;
-    transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+    transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1);
   }
-  [data-animate="fade-up"]  { transform: translateY(32px); }
-  [data-animate="scale-in"] { transform: scale(.92); }
+  [data-animate="fade-up"]  { transform: translateY(36px); }
+  [data-animate="scale-in"] { transform: scale(.9); }
   [data-animate].is-visible { opacity: 1; transform: none; }
 
   /* ── HERO ANIMACIONES ───────────────────────────────────────── */
-  .hero-badge  { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .2s both; }
-  .hero-title  { animation: fadeUp .7s cubic-bezier(.16,1,.3,1) .35s both; }
-  .hero-desc   { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .5s both; }
-  .hero-stats  { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .65s both; }
+  .hero-badge  { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .15s both; }
+  .hero-title  { animation: fadeUp .7s cubic-bezier(.16,1,.3,1) .3s  both; }
+  .hero-desc   { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .45s both; }
+  .hero-ctas   { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .6s  both; }
+  .hero-stats  { animation: fadeUp .6s cubic-bezier(.16,1,.3,1) .5s  both; }
+  .bento-card  { animation: fadeUp .5s cubic-bezier(.16,1,.3,1) .6s  both; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
   }
 
-  /* ── PARTÍCULAS ORO ─────────────────────────────────────────── */
-  .particle-gold {
-    position: absolute;
-    bottom: -4px;
-    width: 2px;
-    height: 2px;
-    background: #c9a84c;
-    border-radius: 50%;
-    animation: riseUp linear infinite;
-  }
-  @keyframes riseUp {
-    0%   { transform: translateY(0) scale(1); opacity: .5; }
-    100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+  /* ── HERO GRADIENT ─────────────────────────────────────────── */
+  .hero-gradient {
+    background: radial-gradient(ellipse 120% 80% at 50% -20%, #dc262640 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 80%,  #2563eb30 0%, transparent 50%),
+                #020617;
   }
 
-  /* ── ICON RING (shake del teléfono) ─────────────────────────── */
-  .icon-ring {
-    animation: ring 5s ease-in-out infinite;
+  /* ── GRADIENT TEXT ─────────────────────────────────────────── */
+  .text-gradient-red {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
+  /* ── PULSE SLOW ─────────────────────────────────────────────── */
+  .animate-pulse-slow { animation: pulse 4s cubic-bezier(.4,0,.6,1) infinite; }
+
+  /* ── ICON RING ──────────────────────────────────────────────── */
+  .icon-ring { animation: ring 5s ease-in-out infinite; }
   @keyframes ring {
-    0%,85%,100% { transform: rotate(0); }
-    87% { transform: rotate(-15deg); }
-    90% { transform: rotate(15deg); }
-    93% { transform: rotate(-10deg); }
-    96% { transform: rotate(8deg); }
-  }
-
-  /* ── SERVICIO CARD HOVER ────────────────────────────────────── */
-  .service-card {
-    transition: border-color .25s, transform .25s;
-  }
-  .service-card:hover, .service-card:active {
-    border-color: rgba(201,168,76,.3);
-    transform: translateY(-2px);
-  }
-  .service-icon {
-    transition: background .25s, transform .25s;
-  }
-  .service-card:hover .service-icon {
-    background: rgba(201,168,76,.2);
-    transform: scale(1.1);
-  }
-
-  /* ── INFO CARD ──────────────────────────────────────────────── */
-  .info-card {
-    transition: border-color .25s;
-  }
-  .info-card:hover {
-    border-color: rgba(201,168,76,.15);
+    0%,80%,100% { transform:rotate(0); }
+    82% { transform:rotate(-15deg); }
+    86% { transform:rotate(15deg); }
+    90% { transform:rotate(-8deg); }
+    94% { transform:rotate(8deg); }
   }
 
   /* ── STAR POP ───────────────────────────────────────────────── */
-  .star-pop {
-    animation: starPop .4s cubic-bezier(.34,1.56,.64,1) both;
-  }
+  .star-pop { animation: starPop .4s cubic-bezier(.34,1.56,.64,1) both; }
   @keyframes starPop {
-    from { transform: scale(0) rotate(-20deg); }
-    to   { transform: scale(1) rotate(0); }
+    from { transform:scale(0) rotate(-20deg); }
+    to   { transform:scale(1) rotate(0); }
   }
-
-  /* ── TOUCH TARGET MÍNIMO 44px ────────────────────────────────── */
-  .touch-target { min-height: 44px; }
-
-  /* ── SAFE AREA (iPhone notch) ───────────────────────────────── */
-  .safe-area-bottom {
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-
-  /* ── SCROLLBAR HIDE ─────────────────────────────────────────── */
-  .scrollbar-hide::-webkit-scrollbar { display: none; }
-  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
   /* ── NAVBAR SCROLLED ────────────────────────────────────────── */
-  .nav-scrolled {
-    border-bottom-color: rgba(201,168,76,.15) !important;
-  }
+  .nav-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08) !important; }
 </style>
