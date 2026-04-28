@@ -77,7 +77,14 @@ export class App implements AfterViewInit {
     size: `${Math.random() * 4 + 2}px`,
     duration: `${Math.random() * 8 + 6}s`,
     delay: `${Math.random() * 6}s`,
+    opacity: `${Math.random() * 0.4 + 0.1}`,
   }));
+
+  mapSteps = [
+    { num: '1', title: 'En Auto', desc: 'Busca en Google Maps' },
+    { num: '2', title: 'A Pie', desc: 'Av. Morelos, Centro' },
+    { num: '3', title: '¿Dudas?', desc: 'Escríbenos por WhatsApp' },
+  ];
 
   mapEmbedUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
     'https://www.google.com/maps?q=Auto+Servicio+Quevedo+Express,+Av.+Morelos+No.+29,+San+Antonio+de+la+Cal,+Oaxaca&z=18&output=embed'
